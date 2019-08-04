@@ -1,0 +1,5 @@
+FI  "1 1 0 SW APP SIGN OFF PDF-175085834X2840X13.A-UDOC;1.0	"  /USER_FILENAME='C:\SerenaTest\Magellan\Build\VVQ BUILD\Software\1.1.0_SW_APP_Sign_off_1.pdf'
+FI  "1 1 1 SW APP SIGN OFF PDF-176563846X2056X1.A-UDOC;1.0"  /USER_FILENAME='C:\SerenaTest\Magellan\Build\VVQ BUILD\Software\1.1.1_SW_APP_Sign_off_1.pdf'
+
+FI "PC EMA SYS BOM XLS.A-IDOC;31.0" /USER_FILENAME="C:\SerenaTest\Magellan\System\System_BOM\PC_EMA_SYS_BOM_31.xls"
+FI "PC EMA SYS BOM XLS.A-IDOC;30.0" /USER_FILENAME="C:\SerenaTest\Magellan\System\System_BOM\PC_EMA_SYS_BOM_30.xls"
