@@ -3,3 +3,43 @@ FI  "1 1 1 SW APP SIGN OFF PDF-176563846X2056X1.A-UDOC;1.0"  /USER_FILENAME='C:\
 
 FI "PC EMA SYS BOM XLS.A-IDOC;31.0" /USER_FILENAME="C:\SerenaTest\Magellan\System\System_BOM\PC_EMA_SYS_BOM_31.xls"
 FI "PC EMA SYS BOM XLS.A-IDOC;30.0" /USER_FILENAME="C:\SerenaTest\Magellan\System\System_BOM\PC_EMA_SYS_BOM_30.xls"
+
+
+Observations:
+1>	Certain revisions are marked with Integer (without .0) causing file not found 
+CMM:A12.A-DAT;17.0
+CMM:A12.A-DAT;16
+CMM:A12.A-DAT;15.0
+2>	Certain Versions are not checked-in or are missing the proper Revision/Possibly OBSOLETE – I am renaming then here in Column 2.
+CMM:A59.A-DAT;5.0              PC_EMA_Cap Washer_723041_5.zip       5              
+CMM:A59.A-DAT;4.0              PC_EMA_Cap Washer_723041_4.zip       4              
+CMM:A59.A-DAT;3.0              PC_EMA_Cap Washer_723041_3.zip       3              
+CMM:A59.A-DAT;2.0              PC_EMA_Cap Washer_723041_1.zip       1
+3>	Certain Revisions are mapped into 2.1, 2.0 due to the binary file format
+Filename                                                                                                                                     File Version                                                Lib. Filename                                                                     Project Folder
+PC_EMA_4-40 X 0.750 Slotted Pan Head Philips Screw_744104.zip     1              CMM:A191.A-DAT;2.1        pcm440x0750slttdpnhdphlpsscrw744104-01.zip                 Mechanical/Purchase Part Specification/
+PC_EMA_4-40 X 0.750 Slotted Pan Head Philips Screw_744104.zip     1              CMM:A191.A-DAT;2.0        pcm440x0750slttdpnhdphlpsscrw744104-01.zip                 Mechanical/Purchase Part Specification/
+                                For these I am renaming them as 
+FI "CMM:A191.A-DAT;2.1             "/USER_FILENAME='C:\SerenaTest\Magellan\Mechanical\Purchase Part Specification\PC_EMA_4-40 X 0.750 Slotted Pan Head Philips Screw_744104_22.zip
+FI "CMM:A191.A-DAT;2.0             "/USER_FILENAME='C:\SerenaTest\Magellan\Mechanical\Purchase Part Specification\PC_EMA_4-40 X 0.750 Slotted Pan Head Philips Screw_744104_21.zip
+
+
+These are the commands tested today
+LSWD    -to List Project Directory
+                
+R-SIVAGAMI	26-Jul-19	15:14:48	OBSOLETE	CMM:PC EMA SYS BOM XLS.A-IDOC;31.0	PC_EMA_SYS_BOM.xls
+SELVARAJAND	24-Jun-19	17:07:38	OBSOLETE	CMM:PC EMA SYS BOM XLS.A-IDOC;30.0	PC_EMA_SYS_BOM_30.xls
+SELVARAJAND	24-Jun-19	16:28:04	OBSOLETE	CMM:PC EMA SYS BOM XLS.A-IDOC;29.0	PC_EMA_SYS_BOM_29.xls
+DMSYS	26-Mar-19	14:57:51	OBSOLETE	CMM:PC EMA SYS BOM XLS.A-IDOC;28.0	PC_EMA_SYS_BOM_28.xls
+DMSYS	06-Dec-18	16:03:24	OBSOLETE	CMM:PC EMA SYS BOM XLS.A-IDOC;27.0	PC_EMA_SYS_BOM_27.xls
+Method Planned:  use EI command (page 227 of [1])
+                EI "FS:CBEVENT C.A-SRC;b1#4" -/USER_FILENAME="e:\cpjtest\cbevent.c" -/REVISION="b1#5" 
+                Ex: EI “CMM:PC EMA SYS BOM XLS.A-IDOC;28.0” -USER_FILENAME=”C:\Serena\Mechanical\<FolderPATH>\ PC_EMA_SYS_BOM_28.xls”  -REVISION=<need to check>
+ 
+                Get Baselines  lsbl to get all Baseline Details and RCI to get list of Items in a Baseline(currently 3)
+ 
+
+References:
+[1]Get Command Line Manual http://help.serena.com/doc_center/cm/ver144/dmcm_command_line_reference.pdf?zoom_highlight=dmcli#search=%22dmcli%22   
+Baseline View from UI https://getsatisfaction.com/serena/topics/determining_which_baselines_contain_a_particular_item_version
+
